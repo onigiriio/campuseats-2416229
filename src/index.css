@@ -1,0 +1,66 @@
+:root {
+  --green: #00685e;
+  --green-light: #e6f2f0;
+  --text: #1f2933;
+  --muted: #616e7c;
+  --bg: #f7f8fa;
+  --radius: 12px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--green);
+  color: #fff;
+}
+.logo { margin: 0; font-size: 1.4rem; }
+.nav { display: flex; gap: 1.25rem; }
+.nav a { color: #fff; text-decoration: none; }
+.badge {
+  background: #fff;
+  color: var(--green);
+  border-radius: 999px;
+  padding: 0 0.5rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+.section-title { font-size: 1.2rem; margin: 1.5rem 0 0.75rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.card h2, .card h3 { margin: 0 0 0.25rem; }
+.vendor-card { display: flex; gap: 1rem; align-items: center; }
+.thumb {
+  width: 64px; height: 64px; flex-shrink: 0;
+  display: grid; place-items: center;
+  background: var(--green-light); color: var(--green);
+  border-radius: var(--radius); font-size: 1.6rem; font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.muted { color: var(--muted); margin: 0.2rem 0; font-size: 0.9rem; }
+.price { font-weight: 700; margin: 0.5rem 0; }
+.status { display: inline-block; margin-top: 0.4rem; padding: 0.1rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; }
+.status.open { background: #e3f7e8; color: #1b7a3a; }
+.status.closed { background: #fdecea; color: #b3261e; }
+.btn {
+  width: 100%; padding: 0.55rem; border: 0; border-radius: 8px;
+  background: var(--green); color: #fff; font-weight: 600; cursor: pointer;
+}
+.btn:disabled { background: #c5cbd3; cursor: not-allowed; }
+
+.footer { text-align: center; color: var(--muted); padding: 2rem 1rem; font-size: 0.85rem; }
