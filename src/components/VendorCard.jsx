@@ -1,4 +1,4 @@
-nction VendorCard() {
+function VendorCard() {
  const vendor = {
  name: 'Kafe Mahallah Ali',
  location: 'Mahallah Ali, Block C',
