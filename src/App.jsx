@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import Header from './components/Header.jsx'
 import VendorCard from './components/VendorCard.jsx'
 import MenuList from './components/MenuList.jsx'
+import MenuItemCard from './components/MenuItemCard.jsx'
 import Footer from './components/Footer.jsx'
 import CartPage from './components/CartPage.jsx'
 import { Loading, ErrorMessage } from './components/Status.jsx'
 
 function App() {
-
   const [vendors, setVendors] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -18,6 +18,7 @@ function App() {
   const [cart, setCart] = useState([])
   const [view, setView] = useState('menu') 
 
+  const [recentlyViewed, setRecentlyViewed] = useState([])
 
   useEffect(() => {
     const controller = new AbortController()
@@ -74,6 +75,13 @@ function App() {
     setView('done')
   }
 
+  function handleViewItem(item) {
+    setRecentlyViewed((prev) => {
+      const filtered = prev.filter((i) => i.id !== item.id) // Remove duplicates[cite: 11]
+      return [item, ...filtered].slice(0, 5) // Newest first, max 5 items[cite: 11]
+    })
+  }
+
   const selectedVendor = vendors.find((v) => v.id === selectedVendorId)
   const cartCount = cart.reduce((total, line) => total + line.qty, 0)
 
@@ -116,7 +124,20 @@ function App() {
         {selectedVendor && (
           <section>
             <h2 className="section-title">Menu: {selectedVendor.name}</h2>
-            <MenuList items={selectedVendor.menu} onAdd={handleAddToCart} />
+            <MenuList items={selectedVendor.menu} onAdd={handleAddToCart} onView={handleViewItem} />
+          </section>
+        )}
+        {recentlyViewed.length > 0 && (
+          <section style={{ marginTop: '2rem', padding: '1.5rem', background: '#f8f9fa', borderRadius: '8px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h2 className="section-title" style={{ margin: 0 }}>Recently Viewed</h2>
+              <button className="link danger" onClick={() => setRecentlyViewed([])}>Clear history</button>
+            </div>
+            <div className="grid" style={{ marginTop: '1rem' }}>
+              {recentlyViewed.map((item) => (
+                <MenuItemCard key={item.id} item={item} onAdd={handleAddToCart} onView={handleViewItem} />
+              ))}
+            </div>
           </section>
         )}
       </>
