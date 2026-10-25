@@ -12,7 +12,7 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [reloadKey, setReloadKey] = useState(0)
-  
+  const [lastOrder, setLastOrder] = useState(null)
 
   const [selectedVendorId, setSelectedVendorId] = useState(null)
   const [cart, setCart] = useState([])
@@ -68,6 +68,10 @@ function App() {
   }
 
   function handlePlaceOrder(details) {
+    const total = cart.reduce((sum, line) => sum + (line.item.price * line.qty), 0)
+    setLastOrder({ ...details, total })
+    setCart([])
+    setView('done')
   }
 
   const selectedVendor = vendors.find((v) => v.id === selectedVendorId)
@@ -80,7 +84,15 @@ function App() {
                 onRemove={handleRemove} onPlaceOrder={handlePlaceOrder} />
     )
   } else if (view === 'done') {
-    content = <p>Order placed.</p>
+    content = (
+      <div className="card">
+        <h2>Order placed!</h2>
+        <p>Thank you, {lastOrder?.name}.</p>
+        <p>Pickup time: {lastOrder?.pickupTime} at Mahallah {lastOrder?.mahallah}</p>
+        <p>Total paid: RM {lastOrder?.total.toFixed(2)}</p>
+        <button className="btn" onClick={() => setView('menu')}>Back to menus</button>
+      </div>
+    )
   } else if (loading) {
     content = <Loading />
   } else if (error) {
