@@ -1,14 +1,11 @@
-// src/components/CartPage.jsx
 import CartItem from './CartItem.jsx'
 import CheckoutForm from './CheckoutForm.jsx'
 
 function CartPage({ cart, onChangeQty, onRemove, onPlaceOrder }) {
-  // Show a message if the cart is empty[cite: 8]
   if (cart.length === 0) {
     return <p className="muted">Your cart is empty. Pick something from a menu first.</p>
   }
   
-  // TODO Filled: derive total with cart.reduce(...)[cite: 8]
   const total = cart.reduce((sum, line) => sum + (line.item.price * line.qty), 0)
 
   return (
