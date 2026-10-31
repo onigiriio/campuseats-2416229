@@ -1,8 +1,12 @@
-function MenuItemCard({ item, onAdd, onView }) {
+import { useCart } from '../hooks/useCart.js'
+
+function MenuItemCard({ item }) {
+  const { addToCart, addViewedItem } = useCart() 
+
   return (
     <article 
       className="card menu-card" 
-      onClick={() => onView && onView(item)} 
+      onClick={() => addViewedItem(item)} // Automatically saves when clicked!
       style={{ cursor: 'pointer' }}
     >
       <div className="thumb" aria-hidden="true">{item.name.charAt(0)}</div>
@@ -14,8 +18,8 @@ function MenuItemCard({ item, onAdd, onView }) {
         className="btn" 
         disabled={!item.available} 
         onClick={(e) => {
-          e.stopPropagation() // Prevents the card's click event from firing
-          onAdd(item)
+          e.stopPropagation() 
+          addToCart(item) 
         }}
       >
         {item.available ? 'Add to cart' : 'Sold out'}

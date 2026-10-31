@@ -1,6 +1,6 @@
 import MenuItemCard from './MenuItemCard.jsx'
 
-function MenuList({ items, onAdd, onView }) {
+function MenuList({ items, onView }) {
   if (items.length === 0) {
     return <p className="muted">No items on this menu yet.</p>
   }
@@ -10,7 +10,6 @@ function MenuList({ items, onAdd, onView }) {
         <MenuItemCard 
           key={item.id} 
           item={item} 
-          onAdd={onAdd} 
           onView={onView} 
         />
       ))}
