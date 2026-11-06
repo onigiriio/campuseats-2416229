@@ -1,4 +1,21 @@
 [
+   {
+    "id": "2416229-woodfire",
+    "name": "Woodfire",
+    "location": "Student Mall, Level 1",
+    "openHours": "9:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      { "id": "2416229-m1-brisket-burger", "name": "Brisket Burger", "description": "Smoked beef brisket, beef patty, cheese, pickles, and Woodfire sauce.", "price": 38.90, "category": "Burgers", "available": true },
+      { "id": "2416229-m2-smoked-beef", "name": "Smoked Beef Burger", "description": "Juicy beef patty, smoked beef bacon, cheese, tomato, lettuce, and signature sauce.", "price": 21.90, "category": "Burgers", "available": true },
+      { "id": "2416229-m3-stuffed-cheese", "name": "Stuffed Cheese Burger", "description": "Beef patty stuffed with mozzarella cheese, topped with caramelized onions and sauce.", "price": 24.90, "category": "Burgers", "available": true },
+      { "id": "2416229-m4-bbq-chicken", "name": "BBQ Chicken Burger", "description": "Crispy fried chicken thigh, BBQ sauce, cheese, and coleslaw.", "price": 19.90, "category": "Burgers", "available": true },
+      { "id": "2416229-m5-curly-fries", "name": "Curly Fries", "description": "Crispy seasoned curly fries.", "price": 8.90, "category": "Sides", "available": true },
+      { "id": "2416229-m6-coney-fries", "name": "Beef Coney Fries", "description": "Fries loaded with minced beef coney sauce and cheese.", "price": 14.90, "category": "Sides", "available": true },
+      { "id": "2416229-m7-coke", "name": "Coca-Cola", "description": "Iced carbonated drink.", "price": 3.50, "category": "Drinks", "available": true },
+      { "id": "2416229-m8-sprite", "name": "Sprite", "description": "Iced lemon-lime carbonated drink.", "price": 3.50, "category": "Drinks", "available": true }
+    ]
+  },
   {
     "id": "2412833-mcdonalds",
     "name": "McDonald's",
@@ -33,23 +50,7 @@
       { "id": "2417045-m7", "name": "Creamy Strawberry Milkshake", "description": "A rich and creamy milkshake with strawberry flavor", "price": 15, "category": "Drinks", "available": false }
     ]
   },
-  {
-    "id": "2416229-woodfire",
-    "name": "Woodfire",
-    "location": "Student Mall, Level 1",
-    "openHours": "9:00 am - 10:00 pm",
-    "isOpen": true,
-    "menu": [
-      { "id": "2416229-m1-brisket-burger", "name": "Brisket Burger", "description": "Smoked beef brisket, beef patty, cheese, pickles, and Woodfire sauce.", "price": 38.90, "category": "Burgers", "available": true },
-      { "id": "2416229-m2-smoked-beef", "name": "Smoked Beef Burger", "description": "Juicy beef patty, smoked beef bacon, cheese, tomato, lettuce, and signature sauce.", "price": 21.90, "category": "Burgers", "available": true },
-      { "id": "2416229-m3-stuffed-cheese", "name": "Stuffed Cheese Burger", "description": "Beef patty stuffed with mozzarella cheese, topped with caramelized onions and sauce.", "price": 24.90, "category": "Burgers", "available": true },
-      { "id": "2416229-m4-bbq-chicken", "name": "BBQ Chicken Burger", "description": "Crispy fried chicken thigh, BBQ sauce, cheese, and coleslaw.", "price": 19.90, "category": "Burgers", "available": true },
-      { "id": "2416229-m5-curly-fries", "name": "Curly Fries", "description": "Crispy seasoned curly fries.", "price": 8.90, "category": "Sides", "available": true },
-      { "id": "2416229-m6-coney-fries", "name": "Beef Coney Fries", "description": "Fries loaded with minced beef coney sauce and cheese.", "price": 14.90, "category": "Sides", "available": true },
-      { "id": "2416229-m7-coke", "name": "Coca-Cola", "description": "Iced carbonated drink.", "price": 3.50, "category": "Drinks", "available": true },
-      { "id": "2416229-m8-sprite", "name": "Sprite", "description": "Iced lemon-lime carbonated drink.", "price": 3.50, "category": "Drinks", "available": true }
-    ]
-  },
+
   {
     "id": "2418497-gepuk-t20",
     "name": "Nasi Ayam Gepuk T20",
